@@ -1,5 +1,5 @@
 .site-morefoot {
-  clear:both;
+  clear: both;
   padding-top: $base-spacing;
   margin-bottom: $base-spacing;
   margin-right: -($base-spacing);
@@ -8,11 +8,12 @@
 
   .footer-widgets {
     @media #{$tablet-up} {
-      @include clearfix;
-      display:block;
+       @include clearfix;
+      display: block;
+
       .widget {
-        width:50%;
-        float:left;
+        width: 50%;
+        float: left;
       }
     }
     @media #{$desktop} {
@@ -22,9 +23,10 @@
       align-items: flex-start;
       @include margin(null auto);
       max-width: $medium-screen * 2;
+
       .widget {
-        width:auto;
-        float:none;
+        width: auto;
+        float: none;
       }
     }
   }
@@ -32,52 +34,60 @@
   .widget {
     li {
       &.emphasize {
-      //  margin-top:1.5em;
+        //  margin-top:1.5em;
       }
-      margin:.25em 0;
+      margin: 0.25em 0;
+
       a {
-        font-size:.9rem;
-        font-weight:400;
+        font-size: 0.9rem;
+        font-weight: 400;
+
         &:after {
-          content:' »';
+          content: ' »';
         }
       }
     }
     @include padding(null $base-spacing $base-spacing);
     margin-bottom: $base-spacing;
     flex-basis: 100%;
+
     .widget-title {
-      color:white;
-      text-transform:uppercase;
+      color: white;
+      text-transform: uppercase;
     }
     @media #{$desktop} {
       flex: 1;
       flex-basis: auto;
     }
   }
+
   .widget_gobble_contact_info {
-    font-size:.9rem;
+    font-size: 0.9rem;
+
     span:last-child a {
-      font-weight:400;
-      color:white;
-      font-size:.9rem;
+      font-weight: 400;
+      color: white;
+      font-size: 0.9rem;
+
       &:hover {
-        color:$orange;
+        color: $orange;
       }
     }
+
     .widget-title + span + br + span {
-      display:block;
-      margin-bottom:-8px;
+      display: block;
+      margin-bottom: -8px;
     }
+
     a {
       &:after {
-        content:none;
+        content: none;
       }
-      font-weight:900;
-      font-size:1rem;
-      display:inline-block;
-      margin-bottom:-8px;
+      font-weight: 900;
+      font-size: 1rem;
+      display: inline-block;
+      margin-bottom: -8px;
     }
   }
-
-}//.site-contact
+}
+//.site-contact
