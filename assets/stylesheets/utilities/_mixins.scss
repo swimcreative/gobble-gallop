@@ -1,0 +1,323 @@
+//FUNCTIONS
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+//MIXINS
+// Rem output with px fallback
+@mixin font-size($size-value: 1) {
+	font-size: ($size-value * strip-units($base-font-size)) * 1px;
+	font-size: $size-value * 1rem;
+}
+
+@mixin container {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+  @media #{$tablet-up} {
+    max-width: $large-screen;
+  }
+}
+
+// PAD BASE UNIT
+
+$pad-base: 200px;
+
+@mixin hero_height {
+  @media #{$tablet-up} and (min-height:800px)  {
+    min-height:$pad-base * 3.6;
+    height:40vw;
+  }
+  min-height:$pad-base * 3;
+  @media #{$mobile} {
+    min-height:1px;
+    height:auto;
+    padding:$pad-base / 2.5 0;
+    .hero-content {
+      margin-top:0 !important;
+      position:relative !important;
+      transform:none !important;
+    }
+  }
+}
+
+
+@mixin hero_pad {
+  @media #{$tablet-up} and (min-height:800px)  {
+    @include padding($pad-base * 1.3 null);
+    @media (min-width:1800px) {
+      padding-top:14.5vw;
+      padding-bottom:14.5vw;
+    }
+  }
+  @include padding($pad-base * 1.1 null);
+  @media #{$mobile} {
+    @media (min-height:500px) {
+      @include padding($pad-base / 1.45 null);
+    }
+    @include padding($pad-base / 1.8 null);
+  }
+}
+
+
+@mixin lg_pad {
+  @media #{$tablet-up} and (min-height:800px)  {
+    @include padding($pad-base null);
+  }
+  @include padding($pad-base / 1.5 null);
+  @media #{$mobile} {
+    @include padding($pad-base / 2.25 null);
+  }
+}
+
+@mixin md_pad {
+  @media #{$tablet-up} and (min-height:800px)  {
+    @include padding($pad-base / 1.5 null);
+  }
+  @include padding($pad-base / 2 null);
+  @media #{$mobile} {
+    @include padding($pad-base / 2.5 null);
+  }
+}
+
+@mixin sm_pad {
+  @media #{$tablet-up} and (min-height:800px)  {
+    @include padding($pad-base / 2 null);
+  }
+  @include padding($pad-base / 3 null);
+  @media #{$mobile} {
+    @include padding($pad-base / 4 null);
+  }
+}
+
+
+@mixin small_pad {
+  @media #{$tablet-up} {
+    @include padding(120px null);
+  }
+  @include padding(60px null);
+}
+
+@mixin xs_pad {
+  @media #{$tablet-up} {
+    @include padding(60px null);
+  }
+  @include padding(30px null);
+}
+
+
+// vert align
+
+@mixin vert_align {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+//COVER
+@mixin cover {
+  background-size:cover;
+  background-position:center center;
+}
+
+// OVERLAY
+@mixin overlay {
+  position:relative;
+  &:after {
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#000;
+    opacity: .3;
+  }
+}
+
+
+@mixin caret($color) {
+  $size: 30px;
+  position:relative;
+  &:before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width:$size;
+    border-style: solid;
+    border-width: $size  $size 0 $size;
+    border-color: $color transparent transparent transparent;
+    z-index:999;
+  }
+}
+
+
+// MIN-WIDTH
+@mixin minwidth {
+  max-width:$medium-screen;
+  margin:0 auto;
+}
+
+//paragraph width
+
+@mixin p_width {
+  max-width:$medium-screen - 138px;
+  margin:0 auto 1em;
+}
+
+@mixin flags {
+  .flag-left,
+  .flag-right {
+    position:absolute;
+    height:60px;
+    width:40px;
+    top:15px;
+    background-color:darken($burnt-orange, 12%);
+    z-index:1;
+  }
+
+  .flag-right {
+
+    @include flaps_right(darken($burnt-orange, 12%));
+
+    left:100%;
+    margin-left:-30px;
+    span {
+      position:absolute;
+      bottom:0;
+      width: 0;
+      height: 0;
+      left:-1px;
+      border-style: solid;
+      border-width: 15px 20px 0 0;
+      border-color: darken($burnt-orange, 17%) transparent transparent transparent;
+    }
+  }
+
+  .flag-left {
+    right:100%;
+    margin-right:-30px;
+    span {
+      position:absolute;
+      bottom:0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 20px 15px 0;
+      right:-1px;
+      border-color: transparent darken($burnt-orange, 17%) transparent transparent;
+    }
+    @include flaps_left(darken($burnt-orange, 12%));
+  }
+}
+
+@mixin flaps_right($color) {
+  &:before,
+  &:after {
+    content:'';
+    left:100%;
+    width:20px;
+    position:absolute;
+    border-style: solid;
+  }
+  &:before {
+    bottom:0;
+    border-width: 50px 0 0 18px;
+    border-color: transparent transparent transparent $color;
+
+  }
+  &:after {
+    top:0;
+    border-width: 50px 20px 0 0;
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+@mixin flaps_left($color) {
+  &:before,
+  &:after {
+    content:'';
+    right:100%;
+    width:20px;
+    position:absolute;
+    border-style: solid;
+  }
+  &:before {
+    bottom:0;
+    border-width: 0 0 50px 20px;
+    border-color: transparent transparent $color transparent;
+
+  }
+  &:after {
+    top:0;
+    border-width: 0 20px 50px 0;
+    border-color: transparent $color transparent transparent;
+  }
+}
+
+
+// BOTTOM SHADOW
+@mixin bottom_shadow {
+  &:before {
+    pointer-events:none;
+    z-index:999;
+    content:'';
+    height:150px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    display:block;
+    z-index:999;
+  }
+}
+
+// HEADINGS
+@mixin headings {
+    h1, h2, h3,
+    h4, h5, h6 {
+        @content;
+    }
+}
+
+// TEXT LINE
+@mixin text_line($color) {
+  display: inline-block;
+  position: relative;
+
+&:before, &:after {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 1000px;
+  background: $color;
+  opacity: .6;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+&:before {
+  right: 115%;
+}
+
+&:after {
+  left: 115%;
+  }
+}
+
+
+// widget padding

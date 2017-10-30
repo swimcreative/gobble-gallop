@@ -1,0 +1,165 @@
+/*
+Theme Name: Gobble Gallop
+Theme URI: http://components.underscores.me/
+Author: Swim Creative
+Author URI: http://swimcreative.com
+Description: A monstrous WordPress starter theme.
+Version: 1.0.0 (Godzilla)
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gobble
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+components is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Accessibility
+# Alignments
+# Clearings
+# Typography
+# Forms
+# Buttons
+# Formatting
+# Lists
+# Tables
+# Navigation
+# Links
+# Layout
+	## Posts
+	## Pages
+# Comments
+# Widgets
+# Infinite scroll
+# Media
+	## Galleries
+# GOBBLE
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "utilities/normalize";
+
+/*--------------------------------------------------------------
+#Prerequisites
+--------------------------------------------------------------*/
+@import "bourbon";
+@import "globals/variables";
+@import "utilities/mixins";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/utilities";
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+@import "../fonts/genericons/genericons";
+
+/*--------------------------------------------------------------
+# Globals
+--------------------------------------------------------------*/
+@import "globals/base";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "components/header/site-header";
+
+/*--------------------------------------------------------------
+# Posts
+--------------------------------------------------------------*/
+@import "components/post/posts";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "components/page/pages";
+
+
+/*--------------------------------------------------------------
+# Posts Navigation
+--------------------------------------------------------------*/
+@import "components/post/posts-navigation";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "components/post/infinitescroll";
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@import "components/comment/comments";
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+@import "components/sidebar/sidebar";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "components/footer/site-footer";
+
+
+/// * ADDED SASS FILES * //
+
+/*--------------------------------------------------------------
+# ACF
+--------------------------------------------------------------*/
+
+@import "components/acf/hero";
+@import "components/acf/benefits-carousel";
+@import "components/acf/benefits";
+@import "components/acf/hero-home";
+@import "components/acf/lower-cta";
+@import "components/acf/presented-by";
+@import "components/acf/sponsors";
+
+/*--------------------------------------------------------------
+# Home
+--------------------------------------------------------------*/
+
+@import "components/page/homepage";
+
+/*--------------------------------------------------------------
+# Race
+--------------------------------------------------------------*/
+@import "components/race/race-page";
+@import "components/race/race-sidebar";
+
+
+
+/*--------------------------------------------------------------
+# Tailor //TODO: I think move to a plugin
+--------------------------------------------------------------*/
+//plugin sass (see global/variables for Tailor var overrides)
+//@import "../../../../plugins/tailor/assets/scss/frontend";
+//custom overrides
+//@import "tailor/tailor";
+
+/*--------------------------------------------------------------
+# Custom CSS
+--------------------------------------------------------------*/
+
+body {
+  //background-color: green !important;
+}

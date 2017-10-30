@@ -1,0 +1,27 @@
+#presented-by {
+  .inner-wrap {
+    overflow:hidden;
+  }
+  padding-top:60px;
+  padding-bottom:30px;
+  border-top:20px solid $orange;
+  @include caret($orange);
+  text-align:center;
+  h6 {
+    @include text_line($medium-gray);
+    font-size:1.2rem;
+    color:$medium-gray;
+    text-transform:uppercase;
+    clear:both;
+    @media #{$mobile} {
+      margin-bottom:1em;
+    }
+  }
+}
+
+body:not(.home) #presented-by  + #content > * {
+    @media #{$tablet-up} {
+      padding-top:$base-spacing * 1.5;
+    }
+    padding-top:$base-spacing;
+  }

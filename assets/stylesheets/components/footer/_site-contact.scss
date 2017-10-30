@@ -1,0 +1,36 @@
+.site-contact {
+  @media #{$tablet-up} {
+    float:left;
+  }
+  float:none;
+  display:inline-block;
+  margin:0 auto;
+  @include padding($base-spacing null);
+  padding-top:0;
+  margin-bottom:2em;
+
+  .contact-info-title {
+    pointer-events:none;
+    text-transform:uppercase;
+    letter-spacing:5.5px;
+    font-weight:600;
+    padding-left:10px;
+    padding-top:8px;
+    display:block;
+  }
+
+  .custom-logo-link {
+    transition:opacity $fast;
+    &:hover {
+      opacity:$opac;
+    }
+    margin: 0 0 $base-spacing;
+    img {
+      margin-left:-$base-spacing;
+      filter:brightness(0) invert(1);
+      max-width:300px;
+
+    }
+  }
+
+}//.site-contact

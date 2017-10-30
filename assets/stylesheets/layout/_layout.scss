@@ -1,0 +1,65 @@
+body {
+  background-color: $base-background-color;
+  overflow-x:hidden;
+}
+
+.site {
+  overflow: hidden;
+}
+
+.content-area {
+  a img {
+    &:hover {
+      opacity:.9;
+    }
+  }
+  img {
+    //width:100%;
+  }
+  @include headings {
+    text-transform:none;
+    //letter-spacing:.002em;
+    font-weight:300;
+  }
+  h1,h2 {
+    color:$burnt-orange;
+    //font-weight:900;
+  }
+  h3,h4 {
+    color:darken($orange, 5%);
+  }
+  h5,h6 {
+    color:$dark-gray;
+  }
+  //@include container;
+
+  .single & {
+    padding-bottom: 0;
+  }
+
+  .single.has-post-thumbnail & {
+    padding-top: 0;
+  }
+
+}
+
+// base for all inner wrappings of content
+.inner-wrap {
+  @include container;
+}
+
+section {
+  //@include md_pad;
+  //background:pink;
+  &:nth-child(even) {
+    //background:lightblue;
+  }
+}
+
+body:not(.home) #content {
+  @include container;
+}
+
+@import 'content-sidebar';
+
+//TODO: figure out xl screen layouts and typography

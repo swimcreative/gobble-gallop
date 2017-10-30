@@ -1,0 +1,53 @@
+//BASE WP SEARCH
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > label {
+    margin-bottom: 0;
+    flex: auto;
+    font-weight: normal;
+  }
+}//.search-form
+
+.search-field {
+  width: 100% !important;
+  margin:0;
+}//.search-form-input
+
+.search-submit {
+  padding: .5em;
+  background-color: transparent !important;
+  color: white;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $light-gray;
+  }
+  @media #{$tablet-up} {
+    color: $action-color;
+    &:hover,
+    &:focus,
+    &:active {
+      color: shade($action-color,25);
+    }
+  };
+
+  .genericon {
+    @include font-size(1.5);
+  }
+}//.search-form-submit
+
+#site-search {
+  background-color: transparent;
+  @include margin($small-spacing $small-spacing 0);
+  @media #{$tablet-up} {
+    margin:0 0 0 auto;
+    .search-submit {
+      @include padding($base-spacing $small-spacing);
+    }
+  }
+}
+
+@import 'search-toggle';

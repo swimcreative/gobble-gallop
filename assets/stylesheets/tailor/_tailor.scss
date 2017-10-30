@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# Tailor
+--------------------------------------------------------------*/
+.tailor-ui {
+
+  .tailor-section {
+    margin:0;
+    @include padding($base-spacing null);
+
+    &:only-of-type {
+      min-height: 500px;
+    }
+  }
+
+  .tailor-section__content {
+    @include container;
+    > .tailor-element:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  //tailor column image fixes
+  .tailor-column img {
+      max-width: 100% !important;
+  }
+
+  //tailor map image fixes
+  .tailor-map img {
+      max-width: none !important;
+  }
+
+}//tailor-ui

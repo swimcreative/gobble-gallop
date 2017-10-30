@@ -1,0 +1,287 @@
+//page titles
+
+.faq-box {
+  display:table;
+  vertical-align:middle;
+  width:100%;
+  @include clearfix;
+  margin:$base-spacing * 2.5 0;
+  margin-bottom:0;
+  * {
+    display:inline-block;
+    vertical-align:middle;
+  }
+  .btn {
+     float:right;
+     min-width:190px;
+  }
+  h6 {
+    margin:1.25em 0 !important;
+  }
+}
+
+.entry-content .faq-box {
+  .btn {
+    margin-right:0 !important;
+    margin-left:$base-spacing !important;
+  }
+}
+
+.page-template-full-width,
+.page-template-sponsor-page {
+  #primary.content-area {
+    width:100%;
+    margin:0 auto;
+    float:none;
+    max-width:$medium-screen - 100px;
+  }
+}
+
+// gift matching image adjustment for wysiwyg logos
+
+.page-id-67 {
+  #page .content-area  {
+  .entry-content {
+    img {
+      margin-right:$small-spacing;
+      }
+    }
+  }
+}
+
+.search,
+.error404 {
+  .site-header .custom-logo-link {
+    &,
+    &:before {
+      box-shadow:0px 5px 15px rgba(0,0,0,.4);
+    }
+    &:before {
+      box-shadow:0px 5px 5px rgba(0,0,0,.2);
+      @media #{$mobile} {
+          box-shadow:0px 3px 5px rgba(0,0,0,.2);
+      }
+    }
+  }
+  #content {
+    .content-area {
+      padding-bottom:0;
+      article {
+        margin-bottom:0;
+        paddig-bottom:0;
+      }
+    }
+    @media #{$tablet-up} {
+      padding:150px 0;
+    }
+    padding-top:60px;
+    padding-bottom:$base-spacing;
+  }
+  .page-title {
+    margin-bottom:.75em;
+  }
+  .search-form {
+    position:relative;
+  }
+  .search-submit {
+    &:hover {
+      color:$orange;
+    }
+    font-weight:bold;
+    position:absolute;
+    right:0;
+    color:$yellow;
+    z-index:999;
+  }
+}
+
+.search-everything-highlight-color {
+  color:white;
+}
+
+.nav-links a {
+  @extend .btn, .btn-orange;
+  max-width:200px;
+  margin-left:0;
+}
+#page .content-area .entry-content {
+  ul {
+    margin:1em 0;
+    li {
+      margin:.5em 0;
+    }
+  }
+  img {
+    margin:.7em 0;
+  }
+  .btn {
+    margin-left:0;
+    margin-right:15px;
+  }
+}
+
+.page-template-sponsor-page {
+  .sponsor-item {
+    &:last-of-type + hr {
+      display:none;
+    }
+  }
+  .logo {
+    min-height:0;
+    width:auto;
+    padding:0;
+    opacity:1;
+    border:none;
+    background:none;
+    filter:none;
+    float:none;
+    img {
+      max-width:250px;
+      height:auto;
+      margin-bottom:.7em;
+    }
+  }
+}
+
+
+#sidebar-race-list {
+  overflow:hidden;
+  @extend .widget;
+  text-align:left;
+  @media #{$mobile} {
+  padding-bottom:0 !important;
+  text-align:center;
+  h4 {
+      text-align:center;
+      @include text_line($medium-gray);
+    }
+  }
+  a {
+    border-radius:$small-spacing;
+    overflow:hidden;
+    text-shadow:0px 0px 15px rgba(0,0,0,.5);
+    @include overlay;
+    &:after {
+      opacity:.8;
+      transition:opacity $fast;
+    }
+    &:hover {
+      &:after {
+        opacity:.65;
+      }
+    }
+    background-size:cover !important;
+    margin:1em 0;
+    background-position:center center !important;
+    text-transform:uppercase;
+    display:block;
+    padding:60px $small-spacing;
+    background:$burnt-orange;
+    &:first-of-type {
+      &:after {
+          background:$burnt-orange;
+      }
+    }
+    &:nth-last-child(2) {
+      &:after {
+          background:$orange;
+      }
+    }
+    &:last-child {
+      &:after {
+          background:darken($yellow, 10%);
+      }
+    }
+    h2 {
+      position:relative;
+      z-index:99;
+      margin:0;
+      font-size:1.6rem;
+      color:white;
+      text-align:center;
+    }
+  }
+}
+
+.page-template-event-page {
+  @media #{$tablet} {
+    #primary {
+      padding-bottom:0;
+    }
+  }
+  #first {
+    overflow:hidden;
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+  #secondary {
+    @media #{$tablet-up} {
+      padding-top:0;
+    }
+    padding-top:0;
+  }
+  .widget-area {
+    @media #{$tablet} {
+      padding-bottom:0 !important;
+    }
+    .faq-box {
+      display:none;
+    }
+  }
+}
+
+
+// FAQ page
+
+.page-id-64 {
+  .entry-content {
+    ul {
+      + p {
+        margin-top:1.1em;
+      }
+      margin:0 !important;
+      padding:1em 0;
+      padding-bottom:0;
+      li {
+        display:list-item;
+      }
+    }
+    padding-left:$base-spacing;
+    h4 {
+      //font-size:32px;
+      @media #{$mobile} {
+        font-size:27px;
+      }
+      position:Relative;
+      &:before {
+        content:'+';
+        width:20px;
+        position:absolute;
+        left:-5px;
+        color:$burnt-orange;
+        margin-left:-$small-spacing;
+      }
+      &.faq-open {
+        color:lighten($orange, 10%);
+      &:before {
+        top:2px;
+        display:block;
+        left:-6px;
+        transform:rotate(45deg);
+        }
+      }
+      margin-bottom:0;
+      cursor:pointer;
+      &:hover {
+        color:lighten($orange, 10%);
+      }
+      + p {
+        padding-top:1em;
+      }
+      ~ *:not(h4) {
+        word-wrap:break-word;
+        display:none;
+      }
+    }
+  }
+}

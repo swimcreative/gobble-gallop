@@ -1,0 +1,83 @@
+.site-morefoot {
+  clear:both;
+  padding-top: $base-spacing;
+  margin-bottom: $base-spacing;
+  margin-right: -($base-spacing);
+  margin-left: -($base-spacing);
+  border-bottom: $base-border;
+
+  .footer-widgets {
+    @media #{$tablet-up} {
+      @include clearfix;
+      display:block;
+      .widget {
+        width:50%;
+        float:left;
+      }
+    }
+    @media #{$desktop} {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      @include margin(null auto);
+      max-width: $medium-screen * 2;
+      .widget {
+        width:auto;
+        float:none;
+      }
+    }
+  }
+
+  .widget {
+    li {
+      &.emphasize {
+      //  margin-top:1.5em;
+      }
+      margin:.25em 0;
+      a {
+        font-size:.9rem;
+        font-weight:400;
+        &:after {
+          content:' »';
+        }
+      }
+    }
+    @include padding(null $base-spacing $base-spacing);
+    margin-bottom: $base-spacing;
+    flex-basis: 100%;
+    .widget-title {
+      color:white;
+      text-transform:uppercase;
+    }
+    @media #{$desktop} {
+      flex: 1;
+      flex-basis: auto;
+    }
+  }
+  .widget_gobble_contact_info {
+    font-size:.9rem;
+    span:last-child a {
+      font-weight:400;
+      color:white;
+      font-size:.9rem;
+      &:hover {
+        color:$orange;
+      }
+    }
+    .widget-title + span + br + span {
+      display:block;
+      margin-bottom:-8px;
+    }
+    a {
+      &:after {
+        content:none;
+      }
+      font-weight:900;
+      font-size:1rem;
+      display:inline-block;
+      margin-bottom:-8px;
+    }
+  }
+
+}//.site-contact

@@ -1,0 +1,72 @@
+.race-details {
+  margin-bottom:2em;
+  background:$light-gray;
+  padding:$small-spacing $base-spacing;
+  table {
+    @media #{$tablet-up} {
+      width:100%;
+      table-layout:auto;
+    }
+    table-layout:fixed;
+    tr td:first-of-type {
+      width:20%;
+    }
+    tr td:last-of-type {
+      width:80%;
+    }
+    tr {
+      &:last-of-type {
+        td {
+          border:none;
+        }
+      }
+      td {
+        em {
+          color:$dark-gray;
+          font-size:.9em;
+          font-weight:400;
+        }
+        strong {
+          font-weight:900;
+        }
+        vertical-align:top;
+        padding-top:$base-spacing;
+        padding-bottom:$base-spacing;
+        &:first-child {
+          padding-right:$base-spacing;
+        }
+        &:first-child span {
+          font-family:genericons;
+          font-size:2.5rem;
+          color:$gray;
+          position:relative;
+          top:-9px;
+        }
+        h6 {
+          margin-bottom:.4em;
+        }
+        span {
+          color:$orange;
+          font-weight:500;
+          font-size:1.1rem;
+        }
+      }
+    }
+  }
+}
+
+.widget-area {
+  @media #{$mobile} {
+    .widget:not(.benefits-carousel) {
+      img {
+        width:100%;
+      }
+    }
+  }
+  .benefits-carousel {
+    margin-bottom:2em;
+    img {
+        max-width:60%;
+    }
+  }
+}

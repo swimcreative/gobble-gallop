@@ -1,0 +1,58 @@
+.benefits-carousel {
+  .item {
+    min-height:290px;
+    position:relative;
+    width:100%;
+    h6 {
+      font-size:1.2rem;
+      color:$medium-gray;
+      border:1px solid $medium-gray;
+      display:inline-block;
+      padding:8px 10px;
+      margin-left:$small-spacing * 1.5;
+      margin-right:$small-spacing * 1.5;
+    }
+  }
+  text-align:center;
+  img {
+    max-width:250px;
+    display:block;
+    margin:0 auto;
+    clear:both;
+  }
+  .flash {
+    font-family:$passion;
+    font-size:2rem;
+    color:white;
+    position:absolute;
+    bottom:0;
+    right:10%;
+    background:rgba($yellow, .95);
+    padding:20px;
+    text-transform:uppercase;
+  }
+  .flags-right {
+    @include flaps_right(rgba($yellow, .95));
+  }
+  .flags-left {
+      @include flaps_left(rgba($yellow, .95));
+  }
+  .flickity-page-dots {
+    display:none !important;
+  }
+  @media #{$mobile} {
+    margin:0 -1em;
+  }
+}
+
+#page {
+  .flickity-page-dots {
+    position:absolute;
+    top:100%;
+    right:0;
+    float:right;
+    margin-top:2em;
+    display:inline-block;
+    width:auto;
+  }
+}

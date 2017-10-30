@@ -1,0 +1,86 @@
+// global hero stylings
+.hero {
+  overflow:hidden;
+  @media #{$mobile} {
+    &:after {
+      opacity:.5;
+    }
+  }
+  .hero-bg {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-size:cover !important;
+    background-position:center center
+;  }
+  //@include hero_pad;
+  color:white;
+  .hero-content {
+    padding-left:$small-spacing / 2;
+    padding-right:$small-spacing / 2;
+    text-shadow:0px 0px 20px rgba(0,0,0,.3);
+    font-weight:bold;
+    position:relative;
+    z-index:999;
+    @include headings {
+        max-width:$medium-screen + 100px;
+        margin:0 auto;
+        text-transform:uppercase;
+        margin-bottom:.7em;
+    }
+
+    //responsive type
+    @media #{$tablet-up} {
+    h1 {
+      @include font-size(3);
+        @include font-size(4.2);
+        @media (min-height:800px) {
+          @include font-size(5);
+        }
+      }
+      font-size:1.2em;
+    }
+  }
+}
+
+// non-homepage specific
+#page-hero {
+  @include hero_pad;
+  @include overlay;
+  //background-image:url('assets/img/gallop-turkey-hat.jpg');
+  @include cover;
+  &:after {
+    opacity:.3;
+    @media #{$mobile} {
+      opacity:.4;
+    }
+  }
+  .hero-content {
+    @include vert_align;
+    text-align:center;
+    width:100%;
+    left:0;
+    right:0;
+    margin-top:5px;
+    @media #{$tablet-up} {
+      margin-top:56px;
+    }
+
+  }
+  h1 {
+    span {
+      box-shadow: 0px 0px 20px rgba(0,0,0, .4);
+      color:lighten($yellow, 5%);
+      padding:10px 10px 8px 10px;
+      display:inline-block;
+      border:3px solid lighten($yellow, 5%);
+      text-align:center;
+      position:relative;
+      top:-3px;
+      margin:.1em 0;
+    }
+    margin:0 auto;
+  }
+}

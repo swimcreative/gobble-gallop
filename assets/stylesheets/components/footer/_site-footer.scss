@@ -1,0 +1,89 @@
+.site-footer {
+  li.current_page_item {
+    a {
+      &:after {
+        content::none !important;
+      }
+      font-weight:900 !important;
+      color:white;
+    }
+  }
+  @include overlay;
+  text-shadow:0px 0px 5px rgba(0,0,0,.3);
+  background-image:url(assets/img/footer-bg.jpg);
+  //background-attachment:fixed;
+  @include cover;
+  @include md_pad;
+  @media #{$tablet-up} {
+    padding-bottom:5em;
+  }
+  @media #{$mobile} {
+    text-align:center;
+    .custom-logo-link {
+      img {
+        margin-left:0 !important;
+      }
+    }
+  }
+  border-top: $base-border;
+  @include font-size(.875);
+  color:white;
+
+  > * {
+    position:relative;
+    z-index:999;
+  }
+
+  a {
+    color:$orange;
+    &:hover {
+      color:white;
+    }
+  }
+
+  //back to top link
+  .top-link {
+    @include padding($base-spacing null);
+    float: right;
+  }
+
+}
+
+.social {
+  padding-left:0;
+  margin-top:1em;
+  @media #{$tablet-up} {
+    padding-top:3em;
+    float:right;
+  }
+  li {
+    margin:0 10px;
+  }
+  a {
+    font-size:2rem;
+    color:white;
+    &:hover {
+      color:$orange;
+    }
+  }
+}
+
+.sub-footer {
+  @media #{$mobile} {
+    text-align:center;
+  }
+  background:darken($dark-gray, 25%);
+  font-size:.8rem;
+  color:white;
+  padding:.75em 0;
+  a {
+    color:white;
+    &:hover {
+      color:$orange;
+    }
+  }
+}
+
+@import "site-contact";
+@import "site-info";
+@import "site-morefoot";

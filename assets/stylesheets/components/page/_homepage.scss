@@ -1,0 +1,38 @@
+.home {
+  #content {
+    @include md_pad;
+     background-image:url(assets/img/home-bg.jpg);
+     @include cover;
+  }
+  .content-area {
+    @include container;
+    color:white;
+    @include headings {
+      color:white;
+      text-transform:uppercase;
+    }
+    article {
+      .entry-content > p:last-of-type {
+        margin-bottom:0;
+        a {
+          @media #{$tablet-up} {
+            margin-bottom:0;
+            //margin-top:1em;
+          }
+        }
+      }
+      .btn {
+        display:inline-block;
+        clear:none;
+      }
+      //@include minwidth;
+      margin:0 auto;
+      padding:0;
+      text-align:center;
+      p:not(:last-of-type) {
+        @include p_width;
+        margin-bottom:2em;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+#benefits {
+  @include sm_pad;
+  @media #{$mobile} {
+    @include md_pad;
+  }
+  @include caret($orange);
+  .inner-wrap {
+    @include clearfix;
+    > div {
+      &:first-child {
+        @include headings {
+          text-transform:uppercase;
+          color:$burnt-orange;
+        }
+        h3,h4 {
+          color:$orange;
+        }
+        h5,h6 {
+          color:$dark-gray;
+        }
+
+      }
+      @media #{$mobile} {
+        &:first-child {
+          margin-bottom:3em;
+        }
+      }
+      @media #{$tablet-up} {
+        width:50%;
+        display:inline-block;
+        vertical-align:middle;
+        &:first-child {
+          padding-right:$base-spacing;
+        }
+        &:last-child {
+          padding-left:$base-spacing;
+        }
+      }
+    }
+
+  }
+}

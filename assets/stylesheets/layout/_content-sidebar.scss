@@ -1,0 +1,39 @@
+@media #{$tablet-up} {
+  body:not(.home) {
+  .content-area {
+  	float: left;
+    @media #{$desktop} {
+  	  width: 55%;
+    }
+    width: 53%;
+    margin-right:3%;
+  }
+
+  .site-content .widget-area {
+  	float: right;
+  	overflow: hidden;
+    margin-bottom:2em;
+    @media #{$desktop} {
+  	  width: 33%;
+    }
+  	width: 40%;
+    }
+  }
+}
+
+body:not(.home):not(.page-template-race-page) {
+  .content-area,
+  .widget-area {
+    @include sm_pad;
+  }
+}
+
+#content #primary {
+  @media #{$tablet} {
+    padding-bottom:0;
+  }
+}
+
+#content + #lower-cta {
+  @include caret(white);
+}

@@ -1,0 +1,13 @@
+.site-info {
+  @include padding($base-spacing null);
+}
+
+.legal {
+  color:$orange;
+  margin:0;
+  margin-top: $small-spacing;
+  @media #{$tablet-up} {
+    margin-top: 0;
+    float: right;
+  }
+}

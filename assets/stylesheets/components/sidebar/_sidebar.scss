@@ -1,0 +1,99 @@
+//WIDGETS
+.widget {
+  margin: 0 0 2em;
+  padding: 0 0 2em;
+  margin-bottom:0;
+  @include font-size(1);
+
+  //default widget nav, post & comment lists
+	> ul {
+    @extend .menu;
+
+    ul { //pad submenus
+      //padding-left: 1rem;
+    }
+  }
+
+  li {
+    //@extend .nav-item;
+
+    > a {
+      //@extend .nav-link;
+    }
+  }// > ul
+}
+
+.widget-title {
+	@include font-size(1.4);
+  color: darken($medium-gray, 15%);
+  margin: 0 0 $small-spacing;
+  padding: 0 0 $small-spacing;
+	border-bottom: $base-border; //TODO: bs var this
+}
+
+
+
+//DEFAULT WIDGETS
+@import "widgets/archive-widget";
+@import "widgets/calendar-widget";
+@import "widgets/comments-widget";
+@import "widgets/posts-widget";
+@import "widgets/tag-widget";
+@import "widgets/text-widget";
+
+//CUSTOM WIDGETS
+.widget_acftheme_sidenav {
+  .menu {
+    > li > .children {
+      padding: 0;
+    }
+  }
+}
+
+.widget_acftheme_contact_info {
+  .custom-logo-link {
+    float:none;
+  }
+}
+
+//POST SIDEBAR TODO: maybe alternate sidebar style options like 3col layout below
+.post-sidebar {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include padding(4em);
+
+  .widget {
+    flex: 1 1 33.3333%;
+    @include padding(null 15px);
+  }
+}
+
+
+.widget-area {
+  .faq-box {
+    margin:2em 0;
+    @extend .widget;
+    * {
+      margin-top:0 !important;
+      display:block;
+      clear:both;
+    }
+    a {
+      margin-left:0;
+      display:block;
+      float:left;
+    }
+  }
+}
+
+//races widget
+
+.races-widget {
+  .btn {
+    margin-left:0;
+  }
+}

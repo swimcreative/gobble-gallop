@@ -1,0 +1,71 @@
+#home-hero {
+  background-color:#111;
+  .flickity-viewport {
+    //transition:height $slow;
+  }
+  .flickity-page-dots {
+    text-align:center;
+    position:absolute;
+    bottom:$base-spacing;
+    top:auto;
+    left:0;
+    .dot {
+      transition:background-color $fast;
+      background:transparent;
+      height:18px;
+      width:18px;
+      margin:0 5px;
+      border:3px solid white;
+      opacity:1;
+      &.is-selected,
+      &:hover {
+        background-color:$orange;
+        border-color:$orange;
+      }
+    }
+  }
+  .item {
+      @include overlay;
+      width:100%;
+      position:relative;
+      background-image:url(assets/img/hero-bg.jpg);
+      @include cover;
+      @include hero_height;
+      @media #{$mobile} {
+        &:after {
+          opacity:.45;
+        }
+      }
+  }
+  .hero-content {
+    margin-top:65px;
+    @include vert_align;
+    left:0;
+    right:0;
+    @include headings {
+      margin-bottom:.2em;
+    }
+    @include headings {
+      + p {
+      max-width:660px;
+      margin:0 auto 1em;
+      }
+    }
+    text-align:center;
+  }
+  .flickity-prev-next-button .arrow {
+    fill:white !important;
+    @media #{$mobile} {
+      display:none;
+    }
+  }
+}
+
+
+.flickity-prev-next-button {
+  background:none !important;
+}
+
+.flickity-prev-next-button .arrow {
+  fill:$dark-gray !important;
+}

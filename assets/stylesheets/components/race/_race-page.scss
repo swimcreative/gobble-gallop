@@ -1,0 +1,60 @@
+.after-content {
+  line-height:1.3;
+  color:$medium-gray;
+  font-size:.95rem;
+  span {
+    height:20px;
+    width:20px;
+    background:$medium-gray;
+    color:white;
+    border-radius:50%;
+    display:inline-block;
+    text-align:center;
+    margin-right:5px;
+    font-weight:bold;
+    float:left;
+    position:relative;
+    top:2px;
+    padding-right:1px;
+  }
+  p {
+    margin-bottom:1em;
+    display:block;
+    padding-left:30px;
+  }
+}
+
+#register-button {
+  @media #{$mobile} {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index:99999;
+    padding-bottom:0;
+    box-shadow:0px 0px 10px rgba(0,0,0,.7);
+    a {
+     width:100%;
+     border-radius:0;
+     margin-bottom:0;
+    }
+  }
+  .btn {
+    font-size:1.3rem;
+    margin-left:0;
+    margin-top:0;
+  }
+}
+
+
+.page-template-race-page {
+  @media #{$mobile} {
+    padding-bottom:70px;
+  }
+  padding-bottom:0;
+  #page-hero + #content {
+    @include sm_pad;
+    padding-bottom:0 !important;
+  }
+}
