@@ -22,6 +22,6 @@
 		<h2>Tough Turkey 1M »</h2>
 	</a>
 	<a href="<?php echo $giddy_link; ?>" style="background-image:url(<?php echo $giddy_img; ?>)">
-		<h2>Gobbly GiddyUp ¼MI »</h2>
+		<h2>Gobble Giddy Up ¼MI »</h2>
 	</a>
 </div>
