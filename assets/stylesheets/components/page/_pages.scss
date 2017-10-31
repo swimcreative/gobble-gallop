@@ -1,5 +1,14 @@
 //page titles
 
+
+.entry-content,
+#benefits {
+  em {
+    font-size:1rem;
+    color:gray;
+  }
+}
+
 .faq-box {
   display:table;
   vertical-align:middle;
