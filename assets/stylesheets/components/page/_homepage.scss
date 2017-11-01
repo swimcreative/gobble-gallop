@@ -30,7 +30,9 @@
       padding:0;
       text-align:center;
       p:not(:last-of-type) {
-        @include p_width;
+        //@include p_width;
+        max-width:635px;
+        margin:0 auto;
         margin-bottom:2em;
       }
     }
