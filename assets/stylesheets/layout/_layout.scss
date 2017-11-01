@@ -1,10 +1,17 @@
 body {
   background-color: $base-background-color;
   overflow-x:hidden;
+  position:relative;
+}
+
+html, body {
+overflow-x: hidden;
+position:relative;
 }
 
 .site {
   overflow: hidden;
+  position:relative;
 }
 
 .content-area {

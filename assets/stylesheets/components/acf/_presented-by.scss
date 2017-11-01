@@ -19,7 +19,7 @@
   }
 }
 
-body:not(.home) #presented-by  + #content > * {
+body:not(.home) #presented-by  + #content  {
     @media #{$tablet-up} {
       padding-top:$base-spacing * 1.5;
     }

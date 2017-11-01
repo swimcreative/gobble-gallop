@@ -45,13 +45,13 @@ body.logged-in {
     .site-branding {
       top:60px;
     }
+    .site-header > div {
+      top:45px;
+    }
     @media #{$tablet-up} {
       .site-header > div {
-        top:60px;
+        top:30px;
       }
-  }
-  .site-header > div {
-    top:45px;
   }
   @media #{$mobile} {
     .site-branding {

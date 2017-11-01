@@ -27,15 +27,15 @@
         position:relative;
         z-index:99;
         p {
+          &:last-of-type {
+            margin-bottom:0;
+          }
           font-size:1.1rem;
           max-width:350px;
           margin:0 auto 1em;
           @media #{$tablet-up} {
             &:first-of-type {
               min-height:100px;
-            }
-            &:last-of-type {
-              margin-bottom:0;
             }
           }
         }
@@ -90,6 +90,7 @@
           right:0;
           bottom:50%;
           left:0;
+          margin-bottom:-$base-spacing;
         }
       }
     }

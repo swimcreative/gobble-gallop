@@ -7,7 +7,10 @@
     padding:.25em;
     .genericon {
       font-size:1.2rem;
-      margin-top:3px;
+      top:.18em;
+      @include iOS {
+      //  margin-top:4px;
+      }
       position:relative;
       left:.25em;
     }
@@ -25,6 +28,9 @@
         position:absolute;
         right:5px;
         top:6px;
+        @include iOS {
+          top:7px;
+        }
       }
     }
 }
@@ -46,6 +52,7 @@
     }
 
     &.expanded {
+      box-shadow:0px 4px 4px rgba(0,0,0,.4);
         display: none;
     }
     @media #{$tablet-up} {
@@ -123,7 +130,7 @@
                 text-shadow:0px 0px 3px rgba(0,0,0,.3);
             }
             @media #{$tablet-up} {
-              @include padding($small-spacing * 1.4 $small-spacing $small-spacing $small-spacing);
+              @include padding($small-spacing * 1.4 $small-spacing $small-spacing * 1.2 $small-spacing);
               color: white;
 
               &:active,

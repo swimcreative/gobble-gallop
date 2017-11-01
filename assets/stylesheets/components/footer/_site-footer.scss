@@ -1,5 +1,5 @@
 .site-footer {
-  border-top:25px solid $yellow;
+  //border-top:25px solid $yellow;
   li.current_page_item {
     a {
       &:after {
@@ -74,7 +74,11 @@
     text-align:center;
   }
   background:darken($dark-gray, 25%);
-  font-size:.8rem;
+  .inner-wrap {
+    * {
+      font-size:.8rem;
+    }
+  }
   color:white;
   padding:.75em 0;
   a {
