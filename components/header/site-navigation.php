@@ -31,5 +31,5 @@
 				//add search form search-toggle
 				//echo '<li id="site-search" class="search-toggle">' . get_search_form( false ) . '</li>';
 		?>
-	</ul>
+	
 </nav><!-- #site-navigation -->

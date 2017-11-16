@@ -13,9 +13,9 @@ if($bennies) : ?>
   foreach($bennies as $b) : ?>
   <div class="item">
       <h6><?php echo $b['benefit_headline']; ?></h6>
-      <img src="<?php echo $b['benefit_image']; ?>?>"/>
+      <img src="<?php echo $b['benefit_image']; ?>"/>
       <?php if($b['benefit_badge']) : ?>
-      <span class="flash"><span class="flags-left"><?php echo $b['benefit_badge']; ?><span class="flags-right"></span>
+      <span class="flash"><span class="flags-left"></span><?php echo $b['benefit_badge']; ?><span class="flags-right"></span></span>
       <?php endif; ?>
   </div>
 <?php endforeach; endif; ?>
