@@ -3,7 +3,7 @@ if(have_rows('sponsors', 40)) : ?>
 <section id="sponsors">
   <div class="inner-wrap">
     <div class="header-container">
-      <h5>2017 Sponsors</h5>
+      <h5><?php echo date('Y'); ?> Sponsors</h5>
     </div>
     <div class="logo-container">
       <?php foreach($sponsors as $s) : ?>
