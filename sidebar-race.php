@@ -19,9 +19,16 @@
 
 	<!-- Register -->
 
+	<?php
+	$open = get_field('registration_open');
+	if($open) : ?>
+
 	<section id="register-button" class="widget widget_register_button">
 		<a target="_blank" class="btn btn-alt" href="http://www.tempotickets.com/gobblegallop2017">Register Now</a>
 	</section>
+
+
+<?php endif; ?>
 
 	<!-- Race Details -->
 	<section id="race-details" class="widget widget_race-details">
@@ -35,7 +42,7 @@
 		get_template_part('/inc/acf/benefits-carousel');
 	  endif; ?>
 	</section>
-	
+
 
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 

@@ -163,3 +163,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 body {
   //background-color: green !important;
 }
+
+
+.site-footer {
+border-top:none;
+}
+
+#home-hero a {
+	color:white;
+}
+
+
+#home-hero a:not(.btn):hover {
+	color:#e6dd21;
+}

@@ -2,7 +2,7 @@
 	<?php
   if(get_custom_logo()) {
   	echo get_custom_logo() . '<br>';
-		echo '<span class="contact-info-title">' . get_bloginfo('description') . '</span><br>';
+		echo '<span class="contact-info-title">' . 'Thanksgiving '.date('Y') /* WPCS: xss ok. */ . '</span><br>';
   } else {
     echo '<span class="contact-info-title">' . get_bloginfo('name') . '</span><br>';
   }
