@@ -324,7 +324,7 @@ jQuery(function($) {
              autoPlay: 6000,
              friction: 0.3,
              //wrapAround: true,
-          //   adaptiveHeight: true,
+             adaptiveHeight: true,
            });
          }
        }
